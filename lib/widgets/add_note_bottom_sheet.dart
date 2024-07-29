@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/cubits_add_note_cubit/cubits_note_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 
@@ -30,7 +31,7 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
             }
           },
           builder: (context, state) {
-            return ModalProgressHUD(
+            return ModalProgressHUD( 
                 inAsyncCall: state is AddNoteLoading ? true : false,
                 child: AddNoteForm());
           },
