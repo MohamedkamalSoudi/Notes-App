@@ -21,27 +21,30 @@ class NiteItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
         decoration: BoxDecoration(
-          color:  Color(note.color),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Text(
+              title: Text(
                 note.title,
                 style: const TextStyle(color: Colors.black, fontSize: 26),
               ),
-              subtitle:  Padding(
+              subtitle: Padding(
                 padding: const EdgeInsets.only(top: 20, bottom: 16),
                 child: Text(
                   note.subTitle,
-                  style:const TextStyle(
+                  style: const TextStyle(
                       color: Color.fromARGB(255, 138, 130, 130), fontSize: 16),
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                
+                  note.delete();
+                },
                 icon: const Icon(
                   Icons.delete,
                   color: Colors.black,
@@ -49,11 +52,12 @@ class NiteItem extends StatelessWidget {
                 ),
               ),
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(right: 40),
               child: Text(
                 note.date,
-                style: const TextStyle(color: Color.fromARGB(255, 138, 130, 130)),
+                style:
+                    const TextStyle(color: Color.fromARGB(255, 138, 130, 130)),
               ),
             ),
           ],
